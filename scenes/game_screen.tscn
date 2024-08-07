@@ -1,0 +1,236 @@
+[gd_scene load_steps=6 format=3 uid="uid://brif25bd440f5"]
+
+[ext_resource type="Texture2D" uid="uid://cnmjk245281us" path="res://assets/Red.jpg" id="1_n5ige"]
+[ext_resource type="Script" path="res://logic/game_screen.gd" id="1_phe23"]
+[ext_resource type="Script" path="res://logic/ContentContainer.gd" id="1_vm8fd"]
+[ext_resource type="Script" path="res://logic/ChoiceButtons.gd" id="3_ujsj7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mr7y1"]
+
+[node name="GameScreen" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_phe23")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 23
+text = "HP:15, MP:15
+STR:6, INT:9"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "MENU"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+script = ExtResource("1_vm8fd")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "TITLE"
+
+[node name="StatIndicator" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "hp incresed
+hp decresed"
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+texture = ExtResource("1_n5ige")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+bbcode_enabled = true
+text = "fgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfggg fgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfggg
+fgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfggg
+fgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfgggfgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfgggfgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfgggfgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfgggfgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfgggfgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfgggfgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfgggfgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfgggfgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfgggfgfgfgfdfgdfgfgdfdfgfdg
+gfgfdgdfgdfgsgrrfgfdgdfgdfgfdgfggg"
+fit_content = true
+scroll_active = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ChoiceContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mr7y1")
+script = ExtResource("3_ujsj7")
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer"]
+layout_mode = 2
+focus_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 9
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Choice Text"
+autowrap_mode = 3
+
+[node name="ChoiceContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mr7y1")
+script = ExtResource("3_ujsj7")
+choice_index = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2"]
+layout_mode = 2
+focus_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 9
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Choice Text"
+autowrap_mode = 3
+
+[node name="ChoiceContainer3" type="PanelContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mr7y1")
+script = ExtResource("3_ujsj7")
+choice_index = 3
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3"]
+layout_mode = 2
+focus_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 9
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Choice Text"
+autowrap_mode = 3
+
+[node name="ChoiceContainer4" type="PanelContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mr7y1")
+script = ExtResource("3_ujsj7")
+choice_index = 4
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4"]
+layout_mode = 2
+focus_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 9
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Choice Text"
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "SUBSCRIBE TO RED INDIE GAMES"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer/Button" to="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer" method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2/Button" to="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2" method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3/Button" to="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3" method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4/Button" to="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4" method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed"]
